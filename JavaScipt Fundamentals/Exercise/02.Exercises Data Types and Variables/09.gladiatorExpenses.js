@@ -14,39 +14,36 @@ function gladiatorExpenses(lostFightsCount, helmetPrice, swordPrice, shieldPrice
     //	Allowed working time / memory: 100ms / 16MB.
 
     let totalExpenses = 0;
-    let helmetExpense = 0;
-    let swordExpense = 0;
-    let shieldExpence = 0;
-    let armorExpence = 0;
-    let countBrokenHelmet = 0;
-    let countBrokenSword = 0;
+    let helmetCount = 0;
+    let swordCount = 0;
+    let shieldCount = 0;
+    let armorCount = 0;
     let shieldTotalBrakesCount = 0;
 
     for (let i = 1; i <= lostFightsCount; i++) {
         if (i % 2 == 0) {
-            helmetExpense += helmetPrice;
-            countBrokenHelmet++;
+            helmetCount++;
+
 
         }
         if (i % 3 == 0) {
-            swordExpense += swordPrice;
-            countBrokenSword++;
+            swordCount++;
         }
-        if (countBrokenHelmet & countBrokenSword > 0) {
+        if (i % 2 == 0 & i % 3 == 0) {
+
+            shieldCount++;
             shieldTotalBrakesCount++;
-            shieldExpence += shieldPrice;
         }
 
 
 
-        if (shieldTotalBrakesCount % 2 == 0 & shieldTotalBrakesCount>0) {
-            armorExpence += armorPrice;
+        if (shieldTotalBrakesCount % 2 == 0 & shieldTotalBrakesCount > 0) {
+            armorCount++;
+            shieldTotalBrakesCount=0;
         }
-        countBrokenHelmet = 0;
-        countBrokenSword = 0;
     }
 
-    totalExpenses = helmetExpense + swordExpense + shieldExpence + armorExpence;
+    totalExpenses = helmetCount * helmetPrice + swordCount * swordPrice + shieldCount * shieldPrice + armorCount * armorPrice;
 
     console.log(`Gladiator expenses: ${totalExpenses.toFixed(2)} aureus`);
 
@@ -57,5 +54,5 @@ gladiatorExpenses(23,
     12.50,
     21.50,
     40,
-    200    
+    200
     );
