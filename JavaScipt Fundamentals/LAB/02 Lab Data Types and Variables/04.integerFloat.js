@@ -11,6 +11,9 @@ function integerFloat(num1, num2, num3) {
     }
 
 
+
+ 
+
     console.log(`${sum} - ${typeNum}`);
 
 
