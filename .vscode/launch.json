@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\JavaScipt Fundamentals\\LAB\\03.Lab Arrays\\08. condenseArrayNumber.js"
+            "program": "${file}"
         }
     ]
 }
