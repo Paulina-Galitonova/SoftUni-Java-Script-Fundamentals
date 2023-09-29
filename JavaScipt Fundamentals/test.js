@@ -1,52 +1,10 @@
-function demo(startingYield) {
+function demo(arr) {
 
-    let totalExtract = 0;
+    let newArr=[];
+    newArr=arr.reverse()
 
-    let days = 0;
-
-
-
-    while (startingYield >= 100) {
-
-
-
-        totalExtract += (startingYield - 26);
-
-        // if (startingYield >= 26) {
-
-        // }
-
-
-
-        startingYield -= 10;
-
-        days++;
-
-    }
-
-
-
-    // if (startingYield < 100) {
-
-    // totalExtract -= 26;
-
-    // }
-
-
-
-    totalExtract -= 26;
-
-    if (totalExtract < 0) {
-
-        totalExtract = 0;
-
-    }
-
-
-
-    console.log(days);
-
-    console.log(totalExtract);
+    console.log(newArr.join(" "));
+;
 
 }
-demo(450);
+demo(['abc', 'def', 'hig', 'klm', 'nop']);
