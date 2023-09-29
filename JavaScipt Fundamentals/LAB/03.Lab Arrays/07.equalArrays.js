@@ -34,9 +34,7 @@ let currentIndex=0;
         }
     } 
 
-    //   console.log(result ? `${num} Amazing? True`:`${num} Amazing? False`)
-
-    console.log (isIdentical?`Arrays are identical. Sum: ${sum}`:`Arrays are not identical. Found difference at ${currentIndex} index` )
+    console.log (isIdentical?`Arrays are identical. Sum: ${sum}`:`Arrays are not identical. Found difference at ${currentIndex} index` );
 
 //  if (isIdentical) {
 //     console.log(`Arrays are identical. Sum: ${sum}`);
