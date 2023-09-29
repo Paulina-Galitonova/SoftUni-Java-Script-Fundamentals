@@ -4,7 +4,6 @@ function sumFirstLastArrayElements(array){
     //Rrints the sum of the first and last element in that array.
 
     let first = array[0];
-    let lastSymbol= array.length-1;
     let last = array [array.length-1];
 
     
