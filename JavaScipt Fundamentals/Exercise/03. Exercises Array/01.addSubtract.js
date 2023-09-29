@@ -8,21 +8,28 @@ function addSubtract(arr){
 
 //On the first line print the newly modified array, on the second line print the sum of numbers from the original array, 
 //on the third line print the sum of numbers from the modified array.
-let sum =0;
+let sumNew =0;
+let sumOld=0;
+let newArr=[];
+
 
  for (let i =0; i< arr.length; i++) {
-    if (arr[i] %2 ==0){
-        arr[i] += i;
+    if (arr[i] % 2 ==0){
+        newArr[i] = arr[i]+ i;
     } else {
-        arr[i] -= i;
+        newArr[i] = arr[i]- i;
     }
-    sum += arr[i];
+    sumOld += arr[i];
+    sumNew += newArr[i];
 
 
  }
 
- console.log ([arr]);
- console.log (sum);
+ console.log (newArr);
+ console.log (sumOld);
+ console.log (sumNew);
+
+
 
 
 
@@ -30,4 +37,4 @@ let sum =0;
 
 }
 
-addSubtract([5, 15, 23, 56, 35]);
+addSubtract([-5, 11, 3, 0, 2]);
