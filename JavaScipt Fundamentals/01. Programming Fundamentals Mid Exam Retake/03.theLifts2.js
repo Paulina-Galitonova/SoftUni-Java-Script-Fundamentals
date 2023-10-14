@@ -9,8 +9,12 @@ function touristLift(input) {
       }
     }
   
-    let hasEmptySpots = liftState.some(space => space < 4);
-  
+    for (let i = 0; i < liftState.length; i++) {
+        if (liftState[i] < 4) {
+          hasEmptySpots = true;
+          break; // Exit the loop early because we found an empty spot
+        }
+      }  
     if (peopleInQueue === 0 && hasEmptySpots) {
       console.log("The lift has empty spots!");
       console.log(liftState.join(' '));
