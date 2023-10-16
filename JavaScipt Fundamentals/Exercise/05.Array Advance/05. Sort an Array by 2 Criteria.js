@@ -7,10 +7,11 @@ function sortAnArrayByCriteria(words){
 
 
 words.sort((a,b)=>a.length-b.length ||a.localeCompare(b) )
+console.log(words.join(" \n"))
 
 
-for (let i=0; i<words.length; i++){
-    console.log(words[i])
-}
+// for (let i=0; i<words.length; i++){
+//     console.log(words[i])
+// }
 }
 sortAnArrayByCriteria(['Isacc', 'Theodor', 'Jack', 'Harrison', 'George']);

@@ -34,10 +34,10 @@ function houseParty(arr) {
 
 
     }
-    for (let i = 0; i < guestList.length; i++) {
-        console.log(guestList[i]);
-      }
-
+    // for (let i = 0; i < guestList.length; i++) {
+    //     console.log(guestList[i]);
+    //   }
+        console.log(guestList.join(" \n"));
 }
 houseParty(['Tom is going!',
 'Annie is going!',
