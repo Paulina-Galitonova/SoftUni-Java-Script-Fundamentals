@@ -1,31 +1,37 @@
 function memoryGame(input) {
+    let sequence = input.shift().split(' ');
+    let moves = 0;
 
-    let nums = input[0];
-    index = 1
-    let commands = input[index];
-    index++;
+    for (let line of input) {
+        if (line === 'end') {
+            break;
+        }
 
-    while(commands !=="end"){
-        tokens=commands.split(" ");
-        index1=tokens[0];
-        index2=tokens[1];
-        console.log(tokens);
+        let [index1, index2] = line.split(' ').map(Number);
 
+        if (index1 === index2 || index1 < 0 || index1 >= sequence.length || index2 < 0 || index2 >= sequence.length) {
+            let middleIndex = Math.floor(sequence.length / 2);
+            moves++;
+            sequence.splice(middleIndex, 0, `-${moves}a`, `-${moves}a`);
+            console.log('Invalid input! Adding additional elements to the board');
+        } else {
+            if (sequence[index1] === sequence[index2]) {
+                let element = sequence[index1];
+                moves++;
+                sequence = sequence.filter((el, index) => index !== index1 && index !== index2);
+                console.log(`Congrats! You have found matching elements - ${element}!`);
+            } else {
+                console.log('Try again!');
+            }
+        }
 
-
-
+        if (sequence.length === 0) {
+            console.log(`You have won in ${moves} turns!`);
+            return;
+        }
     }
 
-    //На първия ред ще получите последователност от елементи. Всеки елемент в последователността ще има близнак. Докато играчът получи "край" от конзолата, вие ще получавате низове с две цели числа, разделени с интервал, представляващи индексите на елементите в последователността.
-    //Ако играчът се опита да мами и въведе два равни индекса или индекси, които са извън границите на последователността, трябва да добавите два съвпадащи елемента в средата на последователността в следния формат: "-{number of moves until now}a" 
-    //Then print this message on the console: "Invalid input! Adding additional elements to the board"
-
-    //•	Every time the player hit two matching elements, you should remove them from the sequence and print on the console the following message: "Congrats! You have found matching elements - {element}!"
-    //•	If the player hit two different elements, you should print on the console the following message:"Try again!"
-    //•	If the player hit all matching elements before he receives "end" from the console, you should print on the console the following message: "You have won in {number of moves until now} turns!"•	If the player receives "end" before he hits all matching elements, you should print on the console the following message: "Sorry you lose :({the current sequence's state}"
-
-
-
+    console.log(`Sorry you lose :\n${sequence.join(' ')}`);
 }
 memoryGame([
     "1 1 2 2 3 3 4 4 5 5",

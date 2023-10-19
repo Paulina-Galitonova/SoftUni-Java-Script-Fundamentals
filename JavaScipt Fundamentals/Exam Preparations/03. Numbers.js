@@ -1,29 +1,40 @@
-function numbers(input){
+function numbers(input) {
 
-//Напишете програма за четене на поредица от цели числа и намиране и отпечатване на първите 5 числа, по-големи от средната стойност в поредицата, сортирани в низходящ ред.
+    let nums = input.split(" ").map(Number);
+    let avg = nums.reduce((acc, val) => acc + val) / nums.length;
+    let topNums = nums
+        .filter(num => num > avg)
+        .sort((a, b) => b - a)
+        .slice(0, 5);
 
-let arr=input.split(" ").map(Number);
-let sum=0;
 
-for (let nums of arr){
-    sum +=nums;
-}
+        if (topNums.length ==0){
+              console.log("No")
+        } else{
+            console.log(topNums.join(" "));
+        }
+    // let arr=input.split(" ").map(Number);
+    // let sum=0;
 
-let average=(sum/arr.length).toFixed(2);
-let newArr=[];
-let isFound=false;
+    // for (let nums of arr){
+    //     sum +=nums;
+    // }
 
-for(let num of arr){
-    if(num > average){
-        isFound=true;
-        newArr.push(num);
-    }
-    
-}
-newArr.sort((a, b) => b - a);
-newArr.splice(5,);
+    // let average=(sum/arr.length).toFixed(2);
+    // let newArr=[];
+    // let isFound=false;
 
-console.log(isFound ? newArr.join(" "): "No");
+    // for(let num of arr){
+    //     if(num > average){
+    //         isFound=true;
+    //         newArr.push(num);
+    //     }
+
+    // }
+    // newArr.sort((a, b) => b - a);
+    // newArr.splice(5,);
+
+    // console.log(isFound ? newArr.join(" "): "No");
 
 
 

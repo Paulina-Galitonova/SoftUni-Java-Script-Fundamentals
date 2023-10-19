@@ -31,7 +31,7 @@ function manOnWar(arr) {
             startIndex = Number(tokens[1]);
             endIndex = Number(tokens[2]);
             damage = Number(tokens[3]);
-            if ((startIndex, endIndex >= 0) && (startIndex, endIndex < pirate.length)) {
+            if (startIndex >= 0 && endIndex >= 0 && startIndex < pirate.length && endIndex < pirate.length) {
                 for (let i = startIndex; i <= endIndex; i++) {
                     pirate[i] = pirate[i] - damage;
                     if (pirate[i] <= 0) {
@@ -50,7 +50,7 @@ function manOnWar(arr) {
         else if (tokens[0] == "Repair") {
             index = Number(tokens[1]);
             health = Number(tokens[2]);
-            if (index >= 0 && index < warship.length) {
+            if (index >= 0 && index < pirate.length) {
                 pirate[index] = pirate[index] + health;
                 if (pirate[index] > maxHealth) {
                     pirate[index] = maxHealth;
