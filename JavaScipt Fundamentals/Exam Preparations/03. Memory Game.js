@@ -31,7 +31,7 @@ function memoryGame(input) {
         }
     }
 
-    console.log(`Sorry you lose :\n${sequence.join(' ')}`);
+    console.log(`Sorry you lose :(\n${sequence.join(' ')}`);
 }
 memoryGame([
     "1 1 2 2 3 3 4 4 5 5",
