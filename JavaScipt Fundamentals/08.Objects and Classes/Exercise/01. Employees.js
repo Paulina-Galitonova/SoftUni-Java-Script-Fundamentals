@@ -6,12 +6,13 @@ function employees(arr){
 // At the end print all the list employees in the following format:
 // "Name: {employeeName} -- Personal Number: {personalNum}" 
 
-let employeeData = {};
+for (let employeeName of arr) {
+    let employee={name:employeeName,personalNum:employeeName.length }
 
-for (let name of arr){
-    let personalNum=name.length;
-    employeeData["name"]=name;
-    employeeData["personalNum"]=personalNum;
+    console.log(`Name: ${employee.name} -- Personal Number: ${employee.personalNum}`);
+
+
+
 }
 
 }
@@ -23,10 +24,10 @@ employees([
     ]
     );
 
-    employees([
-        'Samuel Jackson',
-        'Will Smith',
-        'Bruce Willis',
-        'Tom Holland'
-        ]
-        );
+    // employees([
+    //     'Samuel Jackson',
+    //     'Will Smith',
+    //     'Bruce Willis',
+    //     'Tom Holland'
+    //     ]
+    //     );
