@@ -12,42 +12,69 @@ function movies(input) {
 
     for (let commands of input) {
         if (commands.includes("addMovie")) {
-            let movieName = tokens.slice(1).join(' ');
-            movies.push(movieName);
+            let tokens = commands.split("addMovie ");
+            let movieName=tokens[1];
+            let movieObj={name:movieName};
+            movies.push(movieObj);
         }
         else if (commands.includes("directedBy")) {
+            let tokens = commands.split(" directedBy ");
             let movieName=tokens[0];
-            let directedBy=tokens.slice(2).join(' ')
-            if (movies.includes(movieName)){
-               let index=movies.indexOf(movieName)
-                movies.splice(index+1,0,directedBy);
+            let directedBy=tokens[1]
+            let movie=movies.find(movie=>movie.name==movieName);
+            if (movie){
+                movie.director=directedBy;
             }
 
         } else if(commands.includes("onDate")){
+            let tokens = commands.split(" onDate ");
             let movieName=tokens[0];
-            let date=tokens[2];
+            let date=tokens[1];
 
-            if (movies.includes(movieName)){
-                let index=movies.indexOf(movieName);
-                movies.splice(index+1,0,date);
+            let movie=movies.find(movie=>movie.name==movieName);
+            if (movie){
+                movie.date=date;
             }
+
         }
+
+        
 
 
 
     }
 
+    for (let object of movies){
+
+        if(object.name && object.director && object.date){
+            let text =JSON.stringify(object);
+            console.log(text)
+        }
+    
+       
+    }
+    
 
 }
 
+// movies([
+//     'addMovie Fast and Furious',
+//     'addMovie Godfather',
+//     'Inception directedBy Christopher Nolan',
+//     'Godfather directedBy Francis Ford Coppola',
+//     'Godfather onDate 29.07.2018',
+//     'Fast and Furious onDate 30.07.2018',
+//     'Batman onDate 01.08.2018',
+//     'Fast and Furious directedBy Rob Cohen'
+// ]
+// );
+
 movies([
-    'addMovie Fast and Furious',
-    'addMovie Godfather',
-    'Inception directedBy Christopher Nolan',
-    'Godfather directedBy Francis Ford Coppola',
-    'Godfather onDate 29.07.2018',
-    'Fast and Furious onDate 30.07.2018',
-    'Batman onDate 01.08.2018',
-    'Fast and Furious directedBy Rob Cohen'
-]
-);
+    'addMovie The Avengers',
+    'addMovie Superman',
+    'The Avengers directedBy Anthony Russo',
+    'The Avengers onDate 30.07.2010',
+    'Captain America onDate 30.07.2010',
+    'Captain America directedBy Joe Russo'
+    ]
+    )
