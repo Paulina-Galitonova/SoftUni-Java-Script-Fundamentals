@@ -16,7 +16,7 @@ function inventory(arr) {
         let name=tokens[0];
         let level=tokens[1];
         let items=tokens[2].split(", ");
-        let herosObj={Hero:name,level:level,Items:items};
+        let herosObj={Hero:name,level:level,items:items};
         heros.push(herosObj);
 
 
@@ -26,7 +26,7 @@ function inventory(arr) {
     let sortedHeros=heros.sort((a,b)=>a.level-b.level);
  
     for (let hero of sortedHeros){
-        console.log(`Hero: ${hero.Hero}\nlevel => ${hero.level}\nItems => ${hero.Items.join(', ')}`)
+        console.log(`Hero: ${hero.Hero}\nlevel => ${hero.level}\nitems => ${hero.items.join(', ')}`)
 
 
 
