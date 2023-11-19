@@ -1,5 +1,6 @@
 function matchDates(input){
 
+    //creating regeg for the valid dates
 
 let patern=/\b(?<day>\d{2})([.\-\/])(?<mounth>[A-Z][a-z][a-z])\2(?<year>\d{4})\b/g;
 
