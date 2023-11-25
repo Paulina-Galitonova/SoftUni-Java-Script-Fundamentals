@@ -48,7 +48,7 @@ function imitationGame(input){
 //   ]
 //   );
 
-imitationGame([
+imitationGame ([
     'owyouh',
     'Move|2',
     'Move|3',
