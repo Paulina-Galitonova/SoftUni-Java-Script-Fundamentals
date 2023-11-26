@@ -61,8 +61,8 @@ function pirates(input) {
     }
     let numberOfItems = Object.keys(targets).length;
 
-    if (targets) {
-        console.log(`Ahoy, Captain! There are ${numberOfItems} wealthy settlements to go to`);
+    if (numberOfItems > 0) {
+        console.log(`Ahoy, Captain! There are ${numberOfItems} wealthy settlements to go to:`);
 
         for (let town in targets) {
             let { population, gold } = targets[town];
@@ -90,14 +90,14 @@ function pirates(input) {
 // );
 
 pirates((["Nassau||95000||1000",
-"San Juan||930000||1250",
-"Campeche||270000||690",
-"Port Royal||320000||1000",
-"Port Royal||100000||2000",
-"Sail",
-"Prosper=>Port Royal=>-200",
-"Plunder=>Nassau=>94000=>750",
-"Plunder=>Nassau=>1000=>150",
-"Plunder=>Campeche=>150000=>690",
-"End"])
+    "San Juan||930000||1250",
+    "Campeche||270000||690",
+    "Port Royal||320000||1000",
+    "Port Royal||100000||2000",
+    "Sail",
+    "Prosper=>Port Royal=>-200",
+    "Plunder=>Nassau=>94000=>750",
+    "Plunder=>Nassau=>1000=>150",
+    "Plunder=>Campeche=>150000=>690",
+    "End"])
 )
