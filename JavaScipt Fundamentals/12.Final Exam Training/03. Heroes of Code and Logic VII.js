@@ -93,8 +93,7 @@ function partyCodeLogic(input) {
 
     }
 
-
-
+    
 
 }
 
